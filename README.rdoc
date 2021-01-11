@@ -1,5 +1,19 @@
-= Redmine
+# Redmine
 
-Redmine is a flexible project management web application written using Ruby on Rails framework.
+## Setup Local
 
-More details can be found in the doc directory or on the official website http://www.redmine.org
+1. [x] MYSQL
+2. [x] MYSQL WorkBench
+3. [x] Ruby
+4. [x] Start Script
+
+## Refs
+
+```bash
+sudo apt install mysql-server mysql-client -y
+sudo apt-get install libmysqlclient-dev
+bundler install --path=vendor
+cp config/database.yml.example config/database.yml
+cp config/configuration.yml.example config/configuration.yml
+rails s
+```
