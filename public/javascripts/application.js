@@ -1324,12 +1324,15 @@ function highlightStatus() {
     "background-color",
     "#ffc107!important"
   );
-  $("td.status:contains('Pending')").css(
+  // $("td.status:contains('Pending')").css(
+  //   "background-color",
+  //   "#6c757d!important"
+  // );
+  // $("td.status:contains('New')").css("background-color", "#212529!important");
+  $("td.status:contains('Finished')").css(
     "background-color",
-    "#6c757d!important"
+    "#198754!important"
   );
-  $("td.status:contains('New')").css("background-color", "#212529!important");
-  $("td.status:contains('Done')").css("background-color", "#198754!important");
 }
 
 $(document).ready(highlightStatus);

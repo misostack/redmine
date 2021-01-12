@@ -4077,16 +4077,16 @@ th[role="columnheader"]:not(.no-sort):hover:after {
 
 /* Priorities stylesheets */
 
-.priority-highest {
+#my-page .priority-highest {
   background-color: #dc3545 !important;
 }
 
-.priority-highest a {
+#my-page .priority-highest a {
   color: white !important;
 }
 
-td.status {
+/* #my-page td.status {
   color: white;
   font-weight: bold;
   padding: 0.5rem;
-}
+} */
