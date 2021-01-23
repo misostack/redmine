@@ -16,6 +16,7 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+require "pp"
 
 module Redmine
   module MenuManager
@@ -113,8 +114,22 @@ module Redmine
       def render_menu(menu, project=nil)
         links = []
         menu_items_for(menu, project) do |node|
+          if node.name == :issues
+
+            custom_node = Redmine::MenuManager::MenuItem.new(
+              'Weekly Planning',
+              url_for(controller: 'issues',
+                  action: 'index',
+                  query_id: 2,
+                  only_path: true)
+            )
+            # pp custom_node
+            links << render_menu_node(custom_node, project)
+          end
+
           links << render_menu_node(node, project)
         end
+
         links.empty? ? nil : content_tag('ul', links.join.html_safe)
       end
 
